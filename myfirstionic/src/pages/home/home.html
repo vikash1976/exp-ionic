@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <h2>GitHub Repo Explorer!</h2>
+  <p>
+    This simple project comes with simple tabs-based layout having following features
+  </p>
+  <ion-card>
+    <ion-list>
+      <ion-list-header>App Features</ion-list-header>
+      <ion-item *ngFor="let feature of features">
+        <ion-icon name="logo-github" item-left></ion-icon>
+        {{feature}}
+
+      </ion-item>
+    </ion-list>
+  </ion-card>
+</ion-content>

@@ -1,0 +1,57 @@
+<!--
+  Generated template for the FavoritesPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-buttons start>
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+
+    <ion-title>Favorite Quote(s)</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <!--  <ion-card *ngFor="let quote of favoriteQuotes; let i = index">
+    <ion-card-header>
+      #{{ i + 1 }}
+    </ion-card-header>
+    <ion-card-content>
+      <p>{{ quote.text }}</p>
+      <p text-right>{{ quote.person }}</p>
+    </ion-card-content>
+    <ion-row>
+      <ion-col text-right>
+          <button ion-button clear small (click)="onAddToFavorite()">
+            <ion-icon name="star"></ion-icon>
+          </button>
+      </ion-col>
+    </ion-row>
+  </ion-card>-->
+  <!--[color]="getBackgroundColor()"-->
+  <ion-list>
+    <ion-item-sliding *ngFor="let quote of favoriteQuotes">
+      <ion-item (click)="onQuoteClicked(quote)"
+      
+      [ngClass]="{diffBG: isDiffBackgroundColor()}">
+        <h3>{{ quote.person }}</h3>
+        <p>{{ quote.text }}</p>
+      </ion-item>
+      <ion-item-options>
+        <button ion-button color="danger" (click)="onRemoveFromFavorites(quote)">
+        <ion-icon name="trash"></ion-icon>
+       
+      </button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+
+</ion-content>
